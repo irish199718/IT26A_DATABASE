@@ -10,7 +10,7 @@ public class INSERT {
     String username = usernameField.getText();
     String password = new String(passwordField.getPassword());
 
-    // Basic validation to save database resources
+  
     if (username.isEmpty() || password.isEmpty()) {
         JOptionPane.showMessageDialog(this, "Please enter both username and password.");
         return;
@@ -33,7 +33,7 @@ public class INSERT {
             JOptionPane.showMessageDialog(this, "Invalid credentials!");
         }
         
-        // Clean up
+      
         rs.close();
         ps.close();
         con.close();
