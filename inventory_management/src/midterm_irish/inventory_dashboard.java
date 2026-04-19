@@ -30,6 +30,19 @@ public class inventory_dashboard extends javax.swing.JFrame {
         jPanel7 = new javax.swing.JPanel();
         jPanel1 = new javax.swing.JPanel();
         Lusername1 = new javax.swing.JLabel();
+        txtfullname = new javax.swing.JTextField();
+        Lusername2 = new javax.swing.JLabel();
+        txtfullname1 = new javax.swing.JTextField();
+        Lusername3 = new javax.swing.JLabel();
+        txtfullname2 = new javax.swing.JTextField();
+        Lusername4 = new javax.swing.JLabel();
+        Lusername5 = new javax.swing.JLabel();
+        txtfullname3 = new javax.swing.JTextField();
+        jButtonlogin = new javax.swing.JButton();
+        jButtonlogin1 = new javax.swing.JButton();
+        jButtonlogin2 = new javax.swing.JButton();
+        jButtonlogin3 = new javax.swing.JButton();
+        jLabel2 = new javax.swing.JLabel();
 
         jButton4.setText("jButton4");
 
@@ -43,22 +56,145 @@ public class inventory_dashboard extends javax.swing.JFrame {
         Lusername1.setForeground(new java.awt.Color(255, 255, 255));
         Lusername1.setText("Add New Product");
 
+        txtfullname.setBackground(new java.awt.Color(240, 248, 255));
+        txtfullname.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
+        txtfullname.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(204, 204, 204), 1, true));
+
+        Lusername2.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
+        Lusername2.setForeground(new java.awt.Color(255, 255, 255));
+        Lusername2.setText("Product Name");
+
+        txtfullname1.setBackground(new java.awt.Color(240, 248, 255));
+        txtfullname1.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
+        txtfullname1.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(204, 204, 204), 1, true));
+
+        Lusername3.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
+        Lusername3.setForeground(new java.awt.Color(255, 255, 255));
+        Lusername3.setText("Stock Quantity");
+
+        txtfullname2.setBackground(new java.awt.Color(240, 248, 255));
+        txtfullname2.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
+        txtfullname2.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(204, 204, 204), 1, true));
+
+        Lusername4.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
+        Lusername4.setForeground(new java.awt.Color(255, 255, 255));
+        Lusername4.setText("Supplier");
+
+        Lusername5.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
+        Lusername5.setForeground(new java.awt.Color(255, 255, 255));
+        Lusername5.setText("Status");
+
+        txtfullname3.setBackground(new java.awt.Color(240, 248, 255));
+        txtfullname3.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
+        txtfullname3.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(204, 204, 204), 1, true));
+
+        jButtonlogin.setBackground(new java.awt.Color(0, 128, 0));
+        jButtonlogin.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
+        jButtonlogin.setForeground(new java.awt.Color(255, 255, 255));
+        jButtonlogin.setText("Add Product");
+        jButtonlogin.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonloginActionPerformed(evt);
+            }
+        });
+
+        jButtonlogin1.setBackground(new java.awt.Color(0, 0, 128));
+        jButtonlogin1.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
+        jButtonlogin1.setForeground(new java.awt.Color(255, 255, 255));
+        jButtonlogin1.setText("Update Product");
+        jButtonlogin1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonlogin1ActionPerformed(evt);
+            }
+        });
+
+        jButtonlogin2.setBackground(new java.awt.Color(192, 0, 0));
+        jButtonlogin2.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
+        jButtonlogin2.setForeground(new java.awt.Color(255, 255, 255));
+        jButtonlogin2.setText("Delete Product");
+        jButtonlogin2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonlogin2ActionPerformed(evt);
+            }
+        });
+
+        jButtonlogin3.setBackground(new java.awt.Color(105, 105, 105));
+        jButtonlogin3.setFont(new java.awt.Font("SansSerif", 1, 16)); // NOI18N
+        jButtonlogin3.setForeground(new java.awt.Color(255, 255, 255));
+        jButtonlogin3.setText("Logout");
+        jButtonlogin3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonlogin3ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(40, 40, 40)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(Lusername1)
-                .addContainerGap(45, Short.MAX_VALUE))
+                .addGap(40, 40, 40))
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(25, 25, 25)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(Lusername4)
+                            .addComponent(txtfullname2, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addComponent(Lusername2)
+                                .addComponent(Lusername3)
+                                .addComponent(txtfullname, javax.swing.GroupLayout.DEFAULT_SIZE, 190, Short.MAX_VALUE)
+                                .addComponent(txtfullname1))
+                            .addComponent(Lusername5)))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(23, 23, 23)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(txtfullname3, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jButtonlogin3, javax.swing.GroupLayout.PREFERRED_SIZE, 189, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(jButtonlogin, javax.swing.GroupLayout.PREFERRED_SIZE, 189, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(jButtonlogin1, javax.swing.GroupLayout.PREFERRED_SIZE, 189, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(jButtonlogin2, javax.swing.GroupLayout.PREFERRED_SIZE, 189, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                .addContainerGap(25, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(19, 19, 19)
+                .addGap(16, 16, 16)
                 .addComponent(Lusername1)
-                .addContainerGap(457, Short.MAX_VALUE))
+                .addGap(39, 39, 39)
+                .addComponent(Lusername2)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(txtfullname, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(Lusername3)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(txtfullname1, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(Lusername4)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(txtfullname2, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(Lusername5, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(txtfullname3, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jButtonlogin)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jButtonlogin1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jButtonlogin2)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 34, Short.MAX_VALUE)
+                .addComponent(jButtonlogin3)
+                .addGap(15, 15, 15))
         );
+
+        jLabel2.setFont(new java.awt.Font("SansSerif", 1, 18)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel2.setText("Welcome!");
 
         javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);
         jPanel7.setLayout(jPanel7Layout);
@@ -66,11 +202,17 @@ public class inventory_dashboard extends javax.swing.JFrame {
             jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel7Layout.createSequentialGroup()
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 460, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel2)
+                .addContainerGap(368, Short.MAX_VALUE))
         );
         jPanel7Layout.setVerticalGroup(
             jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(jPanel7Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel2)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -81,11 +223,27 @@ public class inventory_dashboard extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jButtonloginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonloginActionPerformed
+
+    }//GEN-LAST:event_jButtonloginActionPerformed
+
+    private void jButtonlogin1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonlogin1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButtonlogin1ActionPerformed
+
+    private void jButtonlogin2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonlogin2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButtonlogin2ActionPerformed
+
+    private void jButtonlogin3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonlogin3ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButtonlogin3ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -124,8 +282,21 @@ public class inventory_dashboard extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel Lusername1;
+    private javax.swing.JLabel Lusername2;
+    private javax.swing.JLabel Lusername3;
+    private javax.swing.JLabel Lusername4;
+    private javax.swing.JLabel Lusername5;
     private javax.swing.JButton jButton4;
+    private javax.swing.JButton jButtonlogin;
+    private javax.swing.JButton jButtonlogin1;
+    private javax.swing.JButton jButtonlogin2;
+    private javax.swing.JButton jButtonlogin3;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel7;
+    private javax.swing.JTextField txtfullname;
+    private javax.swing.JTextField txtfullname1;
+    private javax.swing.JTextField txtfullname2;
+    private javax.swing.JTextField txtfullname3;
     // End of variables declaration//GEN-END:variables
 }
