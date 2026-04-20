@@ -97,7 +97,7 @@
                                       <Group type="103" groupAlignment="0" max="-2" attributes="0">
                                           <Component id="Textusername" alignment="1" max="32767" attributes="0"/>
                                           <Component id="jPassword" alignment="1" max="32767" attributes="0"/>
-                                          <Component id="jButtonlogin" alignment="1" pref="333" max="32767" attributes="0"/>
+                                          <Component id="bttncreateaccount" alignment="1" pref="333" max="32767" attributes="0"/>
                                       </Group>
                                       <Component id="Lusername" alignment="0" min="-2" max="-2" attributes="0"/>
                                       <Group type="103" alignment="0" groupAlignment="0" attributes="0">
@@ -142,14 +142,14 @@
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="jCheckShowPass" min="-2" max="-2" attributes="0"/>
                       <EmptySpace pref="22" max="32767" attributes="0"/>
-                      <Component id="jButtonlogin" min="-2" pref="40" max="-2" attributes="0"/>
+                      <Component id="bttncreateaccount" min="-2" pref="40" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="22" max="-2" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
           </Layout>
           <SubComponents>
-            <Component class="javax.swing.JButton" name="jButtonlogin">
+            <Component class="javax.swing.JButton" name="bttncreateaccount">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="80" green="0" red="0" type="rgb"/>
@@ -163,7 +163,7 @@
                 <Property name="text" type="java.lang.String" value="Create Account"/>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButtonloginActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="bttncreateaccountActionPerformed"/>
               </Events>
             </Component>
             <Component class="javax.swing.JCheckBox" name="jCheckShowPass">

@@ -1,18 +1,16 @@
-
 package midterm_irish;
 
-/**
- *
- * @author ACER
- */
-public class inventory_register extends javax.swing.JFrame {
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import javax.swing.JOptionPane;
 
+public class inventory_register extends javax.swing.JFrame {
 
     public inventory_register() {
         initComponents();
         setLocationRelativeTo(null);
     }
-
 
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -20,7 +18,7 @@ public class inventory_register extends javax.swing.JFrame {
 
         jmain = new javax.swing.JPanel();
         jPanel1 = new javax.swing.JPanel();
-        jButtonlogin = new javax.swing.JButton();
+        bttncreateaccount = new javax.swing.JButton();
         jCheckShowPass = new javax.swing.JCheckBox();
         jLabel5 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
@@ -39,13 +37,13 @@ public class inventory_register extends javax.swing.JFrame {
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
 
-        jButtonlogin.setBackground(new java.awt.Color(0, 0, 128));
-        jButtonlogin.setFont(new java.awt.Font("SansSerif", 1, 16)); // NOI18N
-        jButtonlogin.setForeground(new java.awt.Color(255, 255, 255));
-        jButtonlogin.setText("Create Account");
-        jButtonlogin.addActionListener(new java.awt.event.ActionListener() {
+        bttncreateaccount.setBackground(new java.awt.Color(0, 0, 128));
+        bttncreateaccount.setFont(new java.awt.Font("SansSerif", 1, 16)); // NOI18N
+        bttncreateaccount.setForeground(new java.awt.Color(255, 255, 255));
+        bttncreateaccount.setText("Create Account");
+        bttncreateaccount.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonloginActionPerformed(evt);
+                bttncreateaccountActionPerformed(evt);
             }
         });
 
@@ -111,7 +109,7 @@ public class inventory_register extends javax.swing.JFrame {
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                     .addComponent(Textusername, javax.swing.GroupLayout.Alignment.TRAILING)
                                     .addComponent(jPassword, javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(jButtonlogin, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 333, Short.MAX_VALUE))
+                                    .addComponent(bttncreateaccount, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 333, Short.MAX_VALUE))
                                 .addComponent(Lusername)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(txtfullname, javax.swing.GroupLayout.DEFAULT_SIZE, 333, Short.MAX_VALUE)
@@ -146,7 +144,7 @@ public class inventory_register extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jCheckShowPass)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 22, Short.MAX_VALUE)
-                .addComponent(jButtonlogin, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(bttncreateaccount, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(22, 22, 22))
         );
 
@@ -203,16 +201,53 @@ public class inventory_register extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButtonloginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonloginActionPerformed
+    private void bttncreateaccountActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bttncreateaccountActionPerformed
+        // Get data from your text fields 
+        String fullName = txtfullname.getText();
+        String username = Textusername.getText();
+        String password = new String(jPassword.getPassword());
 
-    }//GEN-LAST:event_jButtonloginActionPerformed
+        // 2. Simple Validation: Don't allow empty fields
+        if (fullName.isEmpty() || username.isEmpty() || password.isEmpty()) {
+            JOptionPane.showMessageDialog(this, "Please fill in all fields before registering.");
+            return;
+        }
+
+        try {
+            //Database Connection Logic (Directly inside the method)
+           String url = "jdbc:mysql://localhost/inventory_management";
+            java.sql.Connection conn = java.sql.DriverManager.getConnection(url, "root", "");
+            //SQL Query
+            String sql = "INSERT INTO users (full_name, username, password) VALUES (?, ?, ?)";
+            PreparedStatement pst = conn.prepareStatement(sql);
+
+            pst.setString(1, fullName);
+            pst.setString(2, username);
+            pst.setString(3, password);
+
+            //Execute and Close
+            pst.executeUpdate();
+            JOptionPane.showMessageDialog(this, "Account Created Successfully!");
+
+            //Switch to Login Frame
+            inventory_login loginFrame = new inventory_login();
+            loginFrame.setVisible(true);
+            this.dispose();
+
+            conn.close();
+
+        } catch (Exception e) {
+            // This catches errors like "Database Not Found" or "Duplicate Username"
+            JOptionPane.showMessageDialog(this, "Registration Error: " + e.getMessage());
+        }
+    }//GEN-LAST:event_bttncreateaccountActionPerformed
 
     private void jCheckShowPassActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckShowPassActionPerformed
-        //        if (jCheckShowPass.isSelected()){
-            //            jPassword.setEchoChar((char) 0); // ma visible ang password
-            //        }else{
-            //            jPassword.setEchoChar('*');//ma tago ang password
-            //        }
+        if (jCheckShowPass.isSelected()) {
+            jPassword.setEchoChar((char) 0); // ma visible ang password
+        } else {
+            jPassword.setEchoChar('*');//ma tago ang password
+        }
     }//GEN-LAST:event_jCheckShowPassActionPerformed
 
     private void jLabel5ComponentShown(java.awt.event.ComponentEvent evt) {//GEN-FIRST:event_jLabel5ComponentShown
@@ -265,7 +300,7 @@ public class inventory_register extends javax.swing.JFrame {
     private javax.swing.JLabel Lusername;
     private javax.swing.JLabel Lusername1;
     private javax.swing.JTextField Textusername;
-    private javax.swing.JButton jButtonlogin;
+    private javax.swing.JButton bttncreateaccount;
     private javax.swing.JCheckBox jCheckShowPass;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
